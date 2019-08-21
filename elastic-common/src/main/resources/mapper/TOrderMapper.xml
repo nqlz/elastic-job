@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zt.repository.TOrderDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.zt.elasticcommon.model.Order">
+        <id column="id" property="id" />
+        <result column="code" property="code" />
+        <result column="type" property="type" />
+        <result column="shop_id" property="shopId" />
+        <result column="customer_id" property="customerId" />
+        <result column="amount" property="amount" />
+        <result column="payment_type" property="paymentType" />
+        <result column="status" property="status" />
+        <result column="postage" property="postage" />
+        <result column="weight" property="weight" />
+        <result column="voucher_id" property="voucherId" />
+        <result column="create_time" property="createTime" />
+        <result column="is_deleted" property="isDeleted" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, code, type, shop_id, customer_id, amount, payment_type, status, postage, weight, voucher_id, create_time, is_deleted
+    </sql>
+
+</mapper>

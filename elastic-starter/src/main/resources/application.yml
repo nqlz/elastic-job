@@ -1,0 +1,46 @@
+elasticjob:
+  zookeeper:
+    name-space: elastic-job-demo
+    server-list: 172.16.10.99 #172.16.10.99
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/**/*.xml
+  type-aliases-package: com.zt.elasticcommon.model
+  configuration:
+    map-underscore-to-camel-case: false
+  global-config:
+    db-config:
+      id-type: id_worker
+spring:
+  jackson:
+    serialization:
+      INDENT_OUTPUT: true
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  application:
+    name: elastic-job-common
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://172.16.10.99:3306/neti?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&serverTimezone=UTC&autoReconnect=true&failOverReadOnly=true&false&useSSL=false
+    hikari:
+      minimum-idle: 5
+      idle-timeout: 600000
+      maximum-pool-size: 10
+      auto-commit: true
+      pool-name: MyHikariCP
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+logging:
+  level:
+    com.zt.elasticcommon.dao: debug
+
+threadpool:
+  order:
+    corePoolSize: 2
+    maxPoolSize: 10
+    keepAliveTime: 60
+    queueSize: 2000

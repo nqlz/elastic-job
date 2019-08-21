@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.zt.autoconfig.ZookeeperAutoConfig,\
+  com.zt.autoconfig.JobAutoConfig
